@@ -205,15 +205,27 @@ body {
 
 .main-page .profile-pic {
   position: relative;
+  overflow: hidden;
+}
+
+.main-page .profile-pic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .main-page .profile-pic::after {
   content: '';
   position: absolute;
-  inset: 62% 0 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 42%;
   pointer-events: none;
-  background: radial-gradient(ellipse 78% 70% at 50% 10%, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.08) 42%, rgba(124, 169, 193, 0.55) 82%, #7ca9c1 100%), -webkit-gradient(linear, left top, left bottom, from(rgba(124, 169, 193, 0)), color-stop(62%, rgba(124, 169, 193, 0.58)), to(#7ca9c1));
-  background: radial-gradient(ellipse 78% 70% at 50% 10%, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.08) 42%, rgba(124, 169, 193, 0.55) 82%, #7ca9c1 100%), linear-gradient(to bottom, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.58) 62%, #7ca9c1 100%);
+  background: radial-gradient(ellipse 72% 85% at 50% 0%, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.04) 32%, rgba(124, 169, 193, 0.58) 76%, #7ca9c1 100%), -webkit-gradient(linear, left top, left bottom, from(rgba(124, 169, 193, 0)), color-stop(66%, rgba(124, 169, 193, 0.42)), to(#7ca9c1));
+  background: radial-gradient(ellipse 72% 85% at 50% 0%, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.04) 32%, rgba(124, 169, 193, 0.58) 76%, #7ca9c1 100%), linear-gradient(to bottom, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.42) 66%, #7ca9c1 100%);
   z-index: 2;
 }
 
@@ -393,6 +405,8 @@ body {
 .about-page h3 {
   font-weight: 500;
   font-size: 2.1em;
+  text-align: right;
+  width: 80%;
 }
 
 .about-page p {
@@ -426,12 +440,15 @@ body {
     margin: 3em 10vw 1em 0;
   }
   .about-page h3 {
-    width: 90%;
-    margin-left: 10vw;
+    text-align: left;
+    width: calc(100% - 20vw);
+    margin: 0 10vw;
   }
   .about-page p {
     text-align: left;
+    width: calc(100% - 20vw);
     margin-left: 10vw;
+    margin-right: 10vw;
   }
 }
 

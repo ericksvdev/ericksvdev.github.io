@@ -1,18 +1,18 @@
-import React, { useEffect, useRef } from 'react';
-import { Parallax } from 'react-parallax';
-import { Button } from '@material-ui/core';
-import gsap from 'gsap';
+import React, { useEffect, useRef } from "react";
+import { Parallax } from "react-parallax";
+import { Button } from "@material-ui/core";
+import gsap from "gsap";
 
 export default function Header() {
   let title = useRef(null);
 
   let imgHeight = window.matchMedia(
-    '(max-width: 1024px) and (max-height: 1366px)'
+    "(max-width: 1024px) and (max-height: 1366px)",
   ).matches
     ? 60
     : 85;
 
-  imgHeight = window.matchMedia('(max-width: 768px) and (max-height: 1024px)')
+  imgHeight = window.matchMedia("(max-width: 768px) and (max-height: 1024px)")
     .matches
     ? 45
     : imgHeight;
@@ -20,21 +20,21 @@ export default function Header() {
   const imageSize = `${imgHeight}vh`;
 
   useEffect(() => {
-    gsap.to(title, { duration: 0.7, opacity: 1, y: -20, ease: 'sine.inOut' });
+    gsap.to(title, { duration: 0.7, opacity: 1, y: -20, ease: "sine.inOut" });
     gsap.fromTo(
-      '.profile-pic',
-      { width: 0, opacity: 0 },
-      { delay: 0.5, duration: 1, opacity: 1, width: imageSize, ease: 'sine' }
+      ".profile-pic",
+      { opacity: 0, width: imageSize },
+      { delay: 1, duration: 1, opacity: 1, width: imageSize, ease: "sine" },
     );
     gsap.fromTo(
-      '.background',
+      ".background",
       { opacity: 0 },
-      { delay: 1.2, duration: 0.5, opacity: 1, y: -20, ease: 'sine' }
+      { delay: 0.5, duration: 0.5, opacity: 1, y: -20, ease: "sine" },
     );
     gsap.fromTo(
-      '.cv-btn',
+      ".cv-btn",
       { opacity: 0 },
-      { delay: 1.5, duration: 0.2, opacity: 1, y: -20, ease: 'sine' }
+      { delay: 1.5, duration: 0.2, opacity: 1, y: -20, ease: "sine" },
     );
   }, []);
 
@@ -47,15 +47,15 @@ export default function Header() {
           <div
             style={{
               height: percentage * window.innerHeight - 10,
-              backgroundColor: '#7CA9C1',
+              backgroundColor: "#7CA9C1",
             }}
           />
         )}
         style={{
-          backgroundColor: '#7CA9C1',
-          position: 'absolute',
-          minHeight: '95vh',
-          width: '76vw',
+          backgroundColor: "#7CA9C1",
+          position: "absolute",
+          minHeight: "90vh",
+          width: "76vw",
           zIndex: -1,
           right: 0,
         }}
@@ -71,26 +71,17 @@ export default function Header() {
           <Button className="cv-btn">Download CV</Button>
         </a>
       </div>
-      <Parallax
-        strength={0}
-        bgImage="images/profile-picture.png"
-        bgImageStyle={{
-          height: imageSize,
-          objectFit: 'contain',
-          width: imageSize,
-        }}
+      <div
         className="profile-pic"
         style={{
-          aspectRatio: '1 / 1',
-          transform: 'scaleX(-1)',
-          marginRight: '7vw',
+          aspectRatio: "1 / 1",
+          height: imageSize,
+          transform: "scaleX(-1)",
+          marginRight: "7vw",
         }}
       >
-        <div
-          className="profile-pic"
-          style={{ aspectRatio: '1 / 1', height: imageSize }}
-        />
-      </Parallax>
+        <img src="/images/profile-picture.png" alt="Erick Silva" />
+      </div>
     </main>
   );
 }

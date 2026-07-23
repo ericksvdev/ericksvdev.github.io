@@ -17,6 +17,8 @@
   h3 {
     font-weight: 500;
     font-size: 2.1em;
+    text-align: right;
+    width: 80%;
   }
 
   p {
@@ -49,13 +51,16 @@
     }
 
     h3 {
-      width: 90%;
-      margin-left: 10vw;
+      text-align: left;
+      width: calc(100% - 20vw);
+      margin: 0 10vw;
     }
 
     p {
       text-align: left;
+      width: calc(100% - 20vw);
       margin-left: 10vw;
+      margin-right: 10vw;
     }
   }
 }
