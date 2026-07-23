@@ -95,7 +95,7 @@ export default function Contact() {
               <a
                 target="_blank"
                 className="fab fa-linkedin"
-                href="https://www.linkedin.com/in/ericksilvadev/"
+                href="https://www.linkedin.com/in/ericksvdev/"
                 rel="noreferrer"
               />
             </li>
@@ -103,7 +103,7 @@ export default function Contact() {
               <a
                 target="_blank"
                 className="fab fa-github"
-                href="https://github.com/ericksilvadev"
+                href="https://github.com/ericksvdev"
                 rel="noreferrer"
               />
             </li>
@@ -119,7 +119,7 @@ export default function Contact() {
               <a
                 target="_blank"
                 className="fab fa-instagram"
-                href="https://www.instagram.com/ericksilvadev/"
+                href="https://www.instagram.com/ericksvdev/"
                 rel="noreferrer"
               />
             </li>

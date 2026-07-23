@@ -129,7 +129,7 @@ export default function Project({
           </a>
           <a
             style={{ color }}
-            href={`https://github.com/ericksilvadev/${repository}`}
+            href={`https://github.com/ericksvdev/${repository}`}
             target="_blank"
             rel="noreferrer"
           >
