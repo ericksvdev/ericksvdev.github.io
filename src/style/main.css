@@ -203,6 +203,20 @@ body {
           justify-content: space-between;
 }
 
+.main-page .profile-pic {
+  position: relative;
+}
+
+.main-page .profile-pic::after {
+  content: '';
+  position: absolute;
+  inset: 62% 0 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 78% 70% at 50% 10%, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.08) 42%, rgba(124, 169, 193, 0.55) 82%, #7ca9c1 100%), -webkit-gradient(linear, left top, left bottom, from(rgba(124, 169, 193, 0)), color-stop(62%, rgba(124, 169, 193, 0.58)), to(#7ca9c1));
+  background: radial-gradient(ellipse 78% 70% at 50% 10%, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.08) 42%, rgba(124, 169, 193, 0.55) 82%, #7ca9c1 100%), linear-gradient(to bottom, rgba(124, 169, 193, 0) 0%, rgba(124, 169, 193, 0.58) 62%, #7ca9c1 100%);
+  z-index: 2;
+}
+
 .main-page .main-content {
   display: -webkit-box;
   display: -ms-flexbox;

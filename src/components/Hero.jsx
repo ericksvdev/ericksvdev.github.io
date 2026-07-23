@@ -5,12 +5,26 @@ import gsap from 'gsap';
 
 export default function Header() {
   let title = useRef(null);
+
+  let imgHeight = window.matchMedia(
+    '(max-width: 1024px) and (max-height: 1366px)'
+  ).matches
+    ? 60
+    : 85;
+
+  imgHeight = window.matchMedia('(max-width: 768px) and (max-height: 1024px)')
+    .matches
+    ? 45
+    : imgHeight;
+
+  const imageSize = `${imgHeight}vh`;
+
   useEffect(() => {
     gsap.to(title, { duration: 0.7, opacity: 1, y: -20, ease: 'sine.inOut' });
     gsap.fromTo(
       '.profile-pic',
       { width: 0, opacity: 0 },
-      { delay: 0.5, duration: 1, opacity: 1, width: 490, ease: 'sine' }
+      { delay: 0.5, duration: 1, opacity: 1, width: imageSize, ease: 'sine' }
     );
     gsap.fromTo(
       '.background',
@@ -23,17 +37,6 @@ export default function Header() {
       { delay: 1.5, duration: 0.2, opacity: 1, y: -20, ease: 'sine' }
     );
   }, []);
-
-  let imgHeight = window.matchMedia(
-    '(max-width: 1024px) and (max-height: 1366px)'
-  ).matches
-    ? 60
-    : 85;
-
-  imgHeight = window.matchMedia('(max-width: 768px) and (max-height: 1024px)')
-    .matches
-    ? 45
-    : imgHeight;
 
   return (
     <main className="main-page" id="home">
@@ -69,16 +72,24 @@ export default function Header() {
         </a>
       </div>
       <Parallax
-        strength={400}
-        bgImage="images/profile-picture.jpg"
-        bgImageStyle={{ height: `${imgHeight}vh` }}
+        strength={0}
+        bgImage="images/profile-picture.png"
+        bgImageStyle={{
+          height: imageSize,
+          objectFit: 'contain',
+          width: imageSize,
+        }}
         className="profile-pic"
         style={{
+          aspectRatio: '1 / 1',
           transform: 'scaleX(-1)',
           marginRight: '7vw',
         }}
       >
-        <div className="profile-pic" style={{ height: `${imgHeight}vh` }} />
+        <div
+          className="profile-pic"
+          style={{ aspectRatio: '1 / 1', height: imageSize }}
+        />
       </Parallax>
     </main>
   );
